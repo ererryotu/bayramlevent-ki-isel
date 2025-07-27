@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayram Levent</title>
+    <style>
+        /* GENEL STİL */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            scroll-behavior: smooth;
+            background: white;
+            color: #333;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            padding: 15px 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav ul li:hover {
+            color: #4CAF50;
+        }
+        section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: black;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* UZMANLIK KARTLARI */
+        .expertise-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .expertise-box {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 25px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .expertise-box:hover {
+            transform: translateY(-5px);
+        }
+        .expertise-box img {
+            height: 180px;
+            object-fit: cover;
+        }
+        .expertise-btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        } 
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+       
+
+        /* İLETİŞİM BÖLÜMÜ */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+        }
+       
+        
+        .contact-info, .contact-form, .contact-map {
+
+            flex: 1;
+            min-width: 300px;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .contact-form input {
+            border-radius: 10px;
+            border: 2px solid #4CAF50;
+        }
+        .contact-form textarea{
+            border-radius: 10px;
+            border: 2px solid #4CAF50;
+        }
+        
+        .contact-form button {
+            background: #4CAF50;
+            color: white;
+            border: 1px solid #333;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px ;
+            cursor: pointer;
+        }
+        .contact-map iframe {
+            width: 100%;
+            height: 300px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+        }
+        i{
+            color: #4CAF50;
+            size: large;
+        }
+        button :hover {
+            color: #333;
+        }
+         #geliştirici span{
+            color:black;
+            font-size: large;
+        }
+        #geliştirici a{
+            color: #bb1d1d;
+        }
+        #geliştirici{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- NAVİGASYON (Artık <a> yerine JavaScript kullanıyor) -->
+    <nav>
+        <ul>
+            <li onclick="scrollToSection('home')">Ana Sayfa</li>
+            <li onclick="scrollToSection('about')">Hakkımda</li>
+            <li onclick="scrollToSection('expertise')">Uzmanlıklar</li>
+            <li onclick="scrollToSection('contact')">İletişim</li>
+        </ul>
+    </nav>
+
+    <!-- BÖLÜMLER -->
+    <section id="home">
+        <h1>Merhaba, Ben Bayram Levent</h1>
+        <p>Tekniker </p>
+        <img src="foto/ca10e52b-5246-4e2c-bee8-cc28582839b5.jpg" alt="Profil" style="width: 200px;">
+    </section>
+
+    <section id="about">
+        <h1>Hakkımda</h1>
+        <p> 16 yıllık tecrubemle size her zaman hizmet vermeye hazırım </p>
+        <img src="foto/hakkımda.jpg" alt="Hakkımda" style="max-width: 500px;">
+    </section>
+
+    <section id="expertise">
+        <h1>Uzmanlık Alanlarım</h1>
+        <div class="expertise-container">
+            <div class="expertise-box">
+                <img src="foto/kamera işi.jpg" alt="Web Tasarım">
+                <h3>kamera sistemleri</h3>
+                <p>Her yer ve her model uygun fiyata kamera takılır</p>
+                <div class="expertise-btn" onclick="scrollToSection('contact')">İletişim</div>
+            </div>
+            <div class="expertise-box">
+                <img src="foto/elektrik.jpg" alt="SEO">
+                <h3>Elektrik</h3>
+                <p>Ev,ofis Elektrik tesisat ve tadilatı yapılır</p>
+                <div class="expertise-btn" onclick="scrollToSection('contact')">İletişim</div>
+            </div>
+             <div class="expertise-box">
+                <img src="foto/araba tamiri.jpg" alt="SEO">
+                <h3>Elektronik </h3>
+                <p>Bütün elektronik eşyalarının teknik servisi yapılır</p>
+                <div class="expertise-btn" onclick="scrollToSection('contact')">İletişim</div>
+            </div>
+             <div class="expertise-box">
+                <img src="foto/bilgisayar tamiri.jpg" alt="SEO">
+                <h3>Bilgisayar  </h3>
+                <p>Bilgisayar tamiri yapılır , format atılır</p>
+                <div class="expertise-btn" onclick="scrollToSection('contact')">İletişim</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>İletişim</h1>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Bilgilerim</h3>
+                <p><i class="fa-solid fa-at"> </i><a href="mailto:">bayramlevent4444@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i><a href="tel:+">+90 534 037 68 53</a> </p>
+                <p><i class="fa-solid fa-location-dot"></i> koyunoğlu mah. koyunoğlu cad. No:79/a Yeşilyurt/Malatya</p>
+            </div>
+            <div class="contact-form">
+                <h3>Mesaj Gönder</h3>
+                <input type="text" placeholder="Adınız" style="width: 100%; padding: 10px; margin: 10px 0;">
+                <textarea placeholder="Mesajınız" style="width: 100%; padding: 10px; height: 100px;"></textarea>
+                <button>Gönder</button>
+            </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d782.3022820104254!2d38.29593211397277!3d38.34414145439582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1753650728487!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> BES Bilgisayar </iframe>
+            </div>
+        </div>
+    </section>
+    <div id="geliştirici"><span>GELİŞTİRİCİ</span> Mahmud Kırnazi<i class="fa-brands fa-github"></i> <a href="http://github.com/codespaces">zıyaret etmek için tıkla</a></div>
+
+    <script>
+        // Kaydırma Fonksiyonu
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
